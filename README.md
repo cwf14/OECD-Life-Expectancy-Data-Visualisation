@@ -14,7 +14,6 @@ An interactive web-based data visualisation dashboard built for **COS 30045: Dat
 - [Running Locally](#running-locally)
 - [Deployment (GitHub Pages)](#deployment-github-pages)
 - [Data Sources](#data-sources)
-- [Team Members](#team-members)
 
 ---
 

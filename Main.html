@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Andrew, Wan Fei, Yen Thung"/>
+    <title>Group 17 - Life Expectancy in OECD Countries</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson-client@3"></script>
+    <link href='https://fonts.googleapis.com/css?family=Bellota Text' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Anton SC' rel='stylesheet'>
+    
+    <link rel="stylesheet" href="Main.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Life Expectancy <br>in OECD Countries</h1>
+          <nav>
+                <a href="#map-chart">Life Expectancy by Countries</a>
+                <a href="#scatterplot-chart">Life Expectancy by Gender</a>
+                <a href="#stacked-bar-chart">Cause of Mortality</a>
+                <a href="#bubble-chart">Health Coverage</a>
+                <a href="#spider-chart">Government Expenditure</a>
+            </nav>
+       
+    </header>
+    <!-- Scroll Down Dashboard -->
+    <div class="scroll-dashboard">
+        <nav>
+            <a href="#map-chart">Life Expectancy by Countries</a>
+            <a href="#scatterplot-chart">Life Expectancy by Gender</a>
+            <a href="#stacked-bar-chart">Cause of Mortality</a>
+            <a href="#bubble-chart">Health Coverage</a>
+            <a href="#spider-chart">Government Expenditure</a>
+        </nav>
+    </div>
+    <section class="Desc">
+        <div class="Desc-text">
+            <h2>About</h2><br>
+            <p>Life expectancy, a critical indicator of a population's health and well-being, is significantly influenced by a myriad of factors, including access to quality healthcare and favorable social conditions. Variations in life expectancy across different regions and populations can be attributed to disparities in causes of mortality, health coverage rates, levels of domestic general government health expenditure per capita, and purchasing power parity (PPP).<br></p>
+            <button class="desc-button" onclick="window.location.href='https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CHealth%23HEA%23%7CHealth%20status%23HEA_STA%23&fs[1]=Reference%20area%2C0%7CJapan%23JPN%23&fs[2]=Reference%20area%2C1%7CNon-OECD%20economies%23WXOECD%23%7CIndia%23IND%23&pg=0&snb=4&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_HEALTH_STAT%40DF_LE&df[ag]=OECD.ELS.HD&df[vs]=1.0&dq=JPN%2BIND.A...Y0........&pd=2015%2C&to[TIME_PERIOD]=false&vw=tb';">
+                OECD
+                <div class="desc-tooltip">click on this button to view the dataset of Life Expectancy from OECD website</div>
+            </button>
+            </div>
+        <div id="Desc-img">
+            <img src="image/image1.webp" alt="Description of Image">
+        </div>
+     </section>
+
+    <!-- Full-Width Chart Sections -->
+    <section id="map-chart" class="chart-section">
+        <h1><b>Global Age Group Indicators Across Countries</b></h1>
+        <div class="chart-content">
+            <div class = "map-desc">
+                <p>This map visualizes age group-related metrics (such as life expectancy or mortality rates) for each country. Each country is color-coded according to the observed value for a selected age group and year, providing a geographical perspective on age-specific trends.</p>
+            </div>
+            <div class="chart">
+                <iframe type="text/html" src="Map.html" scrolling="no" width="100%" height="100%"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="scatterplot-chart" class="chart-section">
+        <div class="chart-content">
+            <div class="chart">
+                <iframe type="text/html" src="ScatterPlot.html"scrolling="yes" width="100%" height="700px"></iframe>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="stacked-bar-chart" class="chart-section">
+        <div class="scrolling-text-container">
+            <div class="scrolling-text-inner" style="--marquee-speed: 20s; --direction:scroll-left" role="marquee">
+                <div class="scrolling-text">
+                    <div class="scrolling-text-item">Causes of Mortality Across OECD Countries</div>
+                    
+                </div>
+            </div>
+        </div>
+        <p>This stacked bar chart illustrates mortality rates per 100,000 inhabitants, categorized by specific causes of death. Each section of the bar represents a distinct cause, such as cardiovascular diseases, respiratory issues, or external injuries.
+        </p>
+        <div class="chart-content">
+            <div class="chart">
+                <iframe type="text/html" src="StackedBar.html" scrolling="yes"  width="100%" height="800px"></iframe>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="bubble-chart" class="chart-section">
+        <div class="chart-content">
+            <div class="chart">
+                <iframe type="text/html" src="bubble.html" scrolling="no" width="100%" height="1100px"></iframe>
+            </div>
+        </div>
+    </section>
+    
+    <section id="spider-chart" class="chart-section">
+        <h1>Government Purchasing Power Parity (PPP) Comparison Across OECD Countries</h1>
+        <p>This spider chart visualizes the government PPP values of selected countries, allowing for a direct comparison of purchasing power across different economic environments. Each axis represents a country's PPP, showing its economic strength in terms of government purchasing power for the latest available year.</p>
+        <div class="chart-content">
+            <div class="chart">
+                <iframe type="text/html" scrolling="yes" src="SpiderChart.html" width="100%" height="800px"></iframe>
+            </div>
+        </div>
+    </section>
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+    
+    <script src="Main.js"></script>
+    <footer><br>COS 30045: DATA VISUALISATION<br>Group 17: Andrew Cheah Kim Teik (s105226584),  Chai Wan Fei (s105024843),  Chai Yen Thung (s105025228)<br> Dataset: 
+        <a href="https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CHealth%23HEA%23%7CHealth%20status%23HEA_STA%23&fs[1]=Reference%20area%2C0%7CJapan%23JPN%23&fs[2]=Reference%20area%2C1%7CNon-OECD%20economies%23WXOECD%23%7CIndia%23IND%23&pg=0&snb=4&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_HEALTH_STAT%40DF_LE&df[ag]=OECD.ELS.HD&df[vs]=1.0&dq=JPN%2BIND.A...Y0........&pd=2015%2C&to[TIME_PERIOD]=false&vw=tb" target="_blank">Chart 1&2</a>
+        <a href="https://data-explorer.oecd.org/vis?pg=0&fs[0]=Topic%2C0%7CHealth%23HEA%23&fs[1]=Topic%2C1%7CHealth%23HEA%23%7CHealth%20status%23HEA_STA%23&fc=Topic&snb=16&vw=tb&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_HEALTH_STAT%40DF_COM&df[ag]=OECD.ELS.HD&df[vs]=1.0&dq=USA%2BGBR%2BTUR%2BCHE%2BSWE%2BESP%2BSVN%2BPRT%2BSVK%2BPOL%2BNOR%2BNZL%2BMEX%2BNLD%2BLUX%2BLTU%2BLVA%2BKOR%2BJPN%2BITA%2BISR%2BIRL%2BISL%2BHUN%2BGRC%2BDEU%2BFRA%2BFIN%2BEST%2BDNK%2BCZE%2BCRI%2BCOL%2BCHL%2BCAN%2BBEL%2BAUT%2BAUS.A...._T.._T%2BCICDINFE%2BCICDNEOP%2BCICDSANG%2BCICDENDO%2BCICDTROU%2BCICDNERV%2BCICDREPS%2BCICDPEAU%2BCICDCIRC%2BCICDDIGE%2BCICDOSTE%2BCICDGENI%2BCICDGROS%2BCICDAFFE%2BCICDCVID%2BCICDSYMP%2BCICDCONG%2BCICDEXTC.STANDARD....&pd=2000%2C&to[TIME_PERIOD]=false" target="_blank">Chart 3</a>
+        <a href="https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CHealth%23HEA%23%7CHealthcare%20coverage%23HEA_COV%23&pg=0&fc=Topic&bp=true&snb=1&vw=tb&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_HEALTH_PROT%40DF_HEALTH_PROT&df[ag]=OECD.ELS.HD&df[vs]=1.0&dq=AUS%2BAUT%2BBEL%2BCAN%2BCHL%2BCOL%2BCRI%2BCZE%2BDNK%2BEST%2BFIN%2BFRA%2BDEU%2BGRC%2BHUN%2BISL%2BIRL%2BISR%2BITA%2BJPN%2BKOR%2BLVA%2BLTU%2BLUX%2BMEX%2BNLD%2BNZL%2BNOR%2BPOL%2BPRT%2BSVK%2BSVN%2BESP%2BSWE%2BCHE%2BTUR%2BGBR%2BUSA.A..PS.TPRIBASI%2BHCVG%2BCOVGCMED&pd=2000%2C&to[TIME_PERIOD]=false" target="_blank">Chart 4</a> 
+        <a href="https://data.worldbank.org/indicator/SH.XPD.GHED.PP.CD" target="_blank">Chart 5</a> 
+    </footer>
+    </body>
+
+</html>
+

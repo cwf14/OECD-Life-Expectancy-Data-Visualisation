@@ -1,0 +1,96 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Light background for contrast */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Ensures items align on the sides */
+    align-items: flex-start; /* Aligns items to the top */
+    width: 100%; /* Adjust width as needed */
+    padding: 20px;
+    margin: 20px;
+}
+
+/* Chart description aligned to the right */
+#chart2desc {
+    width: auto; /* Adjust width as needed */
+    text-align: right;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    padding: 15px;
+}
+
+/* Scatter plot aligned to the left */
+#scatterPlot {
+    width: auto;
+    height: 90%;
+    box-sizing: border-box;
+}
+
+.scatter-container {
+    margin: 0 auto; /* Center the container on the page */
+  }
+  
+  /* Styling for the controls above the scatterplot */
+  .scatter-button {
+    display: flex;
+    margin-top: 50px;
+    margin-left: -10px;
+    justify-content: center; /* Center align the select buttons */
+    gap: 10px; /* Add space between the buttons */
+    margin-bottom: 1px; /* Space between controls and scatter plot */
+  }
+
+/* Styles for the Chart2Button */
+.Chart2Button {
+    background-color: #eeeeee;
+    color: black;
+    padding: 10px 20px;
+    border: 1px solid black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Chart2Button:hover {
+    background-color: #EEEEEE;
+    transform: scale(1.05);
+}
+
+.Chart2Button::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: solid transparent;
+    border-width: 5px;
+    border-left-color: white;
+    transition: transform 0.3s ease;
+}
+
+.Chart2Button:hover::after {
+    transform: translateY(-50%) translateX(5px);
+}
+
+#chart2-title{
+    color:#76ABAE;
+    margin:20px;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    font-size: 55px;
+    font-family: 'Bellota Text';
+}
+#chart2-desc{
+    color: #333;
+    margin:0px;
+    font-weight: bold;
+    
+}

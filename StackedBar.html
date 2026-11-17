@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Data Visualisation Exercise 1" />
+    <meta name="keywords" content="HTML, CSS, D3" />
+    <meta name="author" content="Andrew Cheah Kim Teik" />
+    <link href="Stackedbar&Spider.css" rel="stylesheet" />
+    <title>Cause of Mortality</title>
+</head>
+
+<body class="chart3body">
+    <h1 class="mortalityTitle">Causes of Mortality</h1>
+
+    <!-- Group for buttons and sorting options -->
+    <div class="mortalityControl-group">
+        <!-- Dropdown for year selection -->
+        <select id="yearDropdown" class="mortalityYearDropdown"></select>
+
+        <!-- Sorting options -->
+        <label for="sortOptions">Sort By:</label>
+        <select id="sortOptions" class="mortalitySortOptions">
+            <option value="default">Default</option>
+            <option value="desc">From Highest to Lowest</option>
+            <option value="asc">From Lowest to Highest</option>
+            <option value="a-z">Alphabetic A-Z</option>
+            <option value="z-a">Alphabetic Z-A</option>
+        </select>
+
+        <label for="sortRegions">Sort By Region:</label>
+        <select id="sortRegions" class="mortalitySortRegions">
+            <option value="default">Default</option>
+            <option value="northAmerica">North America</option>
+            <option value="southAmerica">South America</option>
+            <option value="europe">Europe</option>
+            <option value="asiaPacific">Asia-Pacific</option>
+            <option value="middleEast">Middle East</option>
+        </select>
+
+        <!-- Button to toggle Total data -->
+        <button id="toggleTotal" class="mortalityToggleButton">Show Total</button>
+
+        <!-- Button for resetting the chart -->
+        <button id="resetButton" class="mortalityResetButton">Reset</button>
+    </div>
+
+
+    <div id="chart3container" style="overflow-x: auto; width: 100%;">
+        <div id="chart3"></div>
+        <div id="legend3"></div>
+      </div>
+
+    
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="StackedBar.js"></script>
+</body>
+
+</html>

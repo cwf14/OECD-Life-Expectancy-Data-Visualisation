@@ -1,0 +1,523 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+  }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222831;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInFromBottom 1s ease-out;
+}
+
+@keyframes fadeInFromBottom {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Header and Navigation */
+.header {
+    width: 100%;
+    background-color: #222831;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.header h1 {
+    font-weight: bold;
+    color: #EEEEEE;
+    margin-bottom: 10px;
+    font-family: 'Bellota Text';
+    font-size: 50px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 3px #ababab;
+}
+
+.header nav {
+    margin-top: 15px;
+    padding-top: 25px;
+    padding-bottom: 50px;
+}
+
+/* Styling for links with sliding underline on hover */
+.header nav a {
+    text-decoration: none;
+    color: #EEEEEE;
+    font-family: 'Bellota Text';
+    font-size: 1em;
+    margin: 0 15px;
+    padding: 5px 10px;
+    position: relative; /* Make the element a positioned parent for ::after */
+    transition: color 0.3s;
+}
+
+.header nav a::after {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Thickness of the underline */
+    background-color: #76ABAE;
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth animation */
+}
+
+.header nav a:hover::after {
+    width: 100%; /* Expand underline to full width */
+}
+
+.header nav a:hover {
+    color: #e9ecef; /* Optional: Change color on hover */
+}
+
+/* Chart Section Styling */
+.chart-section {
+    width: 100%;
+    height: 100%;
+}
+
+.chart-content {
+    width:100%;
+    height: 100%;
+}
+
+.chart embed {
+    width: 100%;
+    height: 500px; 
+}
+#map-chart .chart iframe {
+    width: 92%;
+    height: 1000px; /* Adjust height as needed */
+    border:none;
+    background-color: #31363F;
+    margin:50px;
+    border: 3px solid black;
+    box-shadow: 15px 15px #76ABAE;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .header nav a {
+        font-size: 0.9em;
+    }
+
+    .chart-section {
+        padding: 15px;
+    }
+
+    .chart embed {
+        height: 400px; /* Reduced height for smaller screens */
+    }
+}
+.map-chart p{
+    font-weight: bold; /* Makes the font bold */
+    font-family: 'Arial', sans-serif; /* Change to a beautiful font of your choice */
+    font-size: 20px; /* Adjust the font size as needed */
+    color: #333; /* Change the color to a desired shade */
+    line-height: 1.5; /* Adjust line height for better readability */
+
+}
+.Desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eeeeee;
+    width: 100%;
+    padding: 100px 50px;
+    
+}
+.Desc-text {
+    flex: 1; /* Allow the text container to take available space */
+    max-width: 50%;
+    padding-left:50px;
+    margin-right: 20px; /* Space between text and image */
+}
+
+#Desc-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: auto;
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Optional: Adjust the image styling */
+#Desc-img img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 500px; /* Limit max size for responsiveness */
+}
+
+.Desc h2  {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    margin-top: -20px;
+}
+
+.Desc h2 p {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    line-height: 1.6;
+    width:55%;
+    text-align: left;
+    
+}
+
+.Desc-text .desc-button  {
+    position: relative; /* Required for positioning the pseudo-element */
+    background-color: #31363F; /* Initial button color */
+    color: #ffffff; /* Text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin:20px;
+    margin-left: 0px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and size */
+}
+
+.Desc-text .desc-button:hover {
+    background-color: #76ABAE; /* Color on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Tooltip styling */
+.desc-button .desc-tooltip {
+    visibility: hidden; /* Hide the tooltip by default */
+    width: 250px; /* Set a width for the tooltip */
+    background-color: #928f8f; /* Tooltip background color */
+    color: #fff; /* Tooltip text color */
+    text-align: center; /* Center the text */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding around the text */
+    position: absolute; /* Position the tooltip */
+    z-index: 1; /* Ensure the tooltip is above other elements */
+    bottom: 125%; /* Position the tooltip above the button */
+    left: 50%; /* Center the tooltip */
+    margin-left: -125px; /* Adjust for half the width */
+    opacity: 0; /* Initially hide the tooltip */
+    transition: opacity 0.3s; /* Fade effect */
+}
+
+.desc-button:hover .desc-tooltip {
+    visibility: visible; /* Show the tooltip on hover */
+    opacity: 1; /* Fade in the tooltip */
+}
+
+/* Scroll Down Dashboard */
+.scroll-dashboard {
+    position: fixed;
+    top: -60px; /* Initially hidden above the viewport */
+    left: 0;
+    width: 100%;
+    background-color: #222831;
+    color: #EEEEEE;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Bellota Text';
+    font-size: 1em;
+    transition: top 0.3s;
+    z-index: 999; /* Keep above other elements */
+}
+/* Navigation Link Styling */
+.scroll-dashboard a {
+    text-decoration: none;
+    color: #EEEEEE;
+    font-family: 'Bellota Text';
+    font-size: 1em;
+    margin: 0 15px;
+    padding: 5px 10px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+/* Hover Effect for Links */
+.scroll-dashboard a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #76ABAE;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.scroll-dashboard a:hover::after {
+    width: 100%;
+}
+
+.scroll-dashboard a:hover {
+    color: #e9ecef;
+}
+.scroll-dashboard.show {
+    top: 0; /* Slide down into view */
+}
+
+.back-to-top {
+    position: fixed; /* Fixed position to stay in view */
+    bottom: 30px; /* Distance from the bottom */
+    right: 60px; /* Distance from the right */
+    display: flex; /* Use flexbox to center the text */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 0; /* Remove extra padding */
+    background-color: #407d59; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 50%; /* Rounded shape */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 1000; /* Ensure it stays above other content */
+    font-size: 24px; /* Font size for the icon */
+    width: 40px; /* Width of the button */
+    height: 40px; /* Height of the button */
+    transition: background-color 0.3s; /* Transition effect */
+    text-align: center; /* Center the arrow */
+}
+
+.back-to-top:hover {
+    background-color: #0056b3; /* Darken the button color on hover */
+}
+
+/*----------------------------------------------------------------------------------------------*/
+#map-chart.chart-section {
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+    background-color: #222831;
+    border:none;
+    margin:0px;
+}
+#map-chart h1{
+    color:#eeeeee;
+    text-align: center;
+    padding:20px;
+    font-size: 60px;
+    margin:10px;
+    /*margin-top:50px;
+    margin-bottom: 50px;*/
+    font-family: 'Bungee';
+    text-shadow: 3px 3px 3px #7eaaad;
+}
+
+#map-desc {
+    color: white;
+}
+
+.chart{
+    border:none;
+}
+#map-chart p{
+    color:#eeeeee;
+    text-align: center;
+    padding: 20px;
+}
+
+/*------------------------------------------------------------------------------------------*/
+
+#scatterplot-chart .chart-content {
+    align-items: center;
+    padding: 10px;
+    background-color: #eeeeee;
+    height: auto;
+}
+/*--------------------------------------------------------------------------------------------*/
+
+#stacked-bar-chart.chart iframe{
+    width: 100%;
+    height: 900px;
+    border: none;
+    background-color: #76ABAE;
+    overflow:auto;
+    margin:100px;
+}
+#stacked-bar-chart.chart-section{
+    width: 100%;
+    margin:20px;
+    border:none;
+    background-color:#3a474f;
+    overflow:auto;
+    
+}
+/* Container styles */
+.scrolling-text-container {
+    background-color: #222831;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Inner container styles */
+.scrolling-text-inner {
+    display: flex;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 0;
+}
+
+/* Text styles */
+.scrolling-text {
+    display: flex;
+}
+
+.scrolling-text-item {
+    padding: 0 30px;
+    font-size: 100px;
+    color:white;
+    text-transform: uppercase;
+}
+
+/* Apply the animation to the text items */
+.scrolling-text-inner>div {
+    animation: var(--direction) var(--marquee-speed) linear infinite;
+}
+
+/* Pause the animation when a user hovers over it */
+.scrolling-text-container:hover .scrolling-text-inner>div {
+    animation-play-state: paused;
+}
+
+/* Setting the Animation using Keyframes */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* Grid background for stacked-bar-chart section */
+#stacked-bar-chart.chart-section {
+    background-color: #222831; /* Light background color */
+    background-image: linear-gradient(to right, white 1px, transparent 1px),
+                      linear-gradient(to bottom,white 1px, transparent 1px);
+    background-size: 100px 100px; /* Adjusts the grid spacing */
+}
+#stacked-bar-chart .chart {
+    width: 90%; /* Adjust to control the width and spacing on left and right */
+    margin: 0 auto; /* Centers the chart */
+    padding:  0px; /* Optional padding for top and bottom */
+    border: 5px solid black;
+}
+#stacked-bar-chart p{
+    color:white;
+    background-color: #030b18;
+    text-align: center;
+    margin:10px 100px 0px 100px;
+    padding: 5px 150px 10px 150px;
+    border: 2px solid #ffffff; /* Example border: 2px solid white */
+}
+
+/*-------------------------------------------------------------------------------------------*/
+
+#parallel-coordinates-chart .chart-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align items to the right */
+    padding: 20px;
+    background-color: #eeeeee;
+}
+
+#parallel-coordinates-chart .chart {
+    flex: 1;
+    max-width: 100%; /* Chart width */
+    margin-left: 20px; /* Optional spacing between the chart and any content on the left */
+    
+}
+
+
+#parallel-coordinates-chart .chart-section {
+    margin: 0;
+    padding: 0;
+    background-color: #eeeeee;
+    position: relative; /* Necessary for absolutely positioned children */
+}
+
+
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+#spider-chart.chart iframe{
+    width: 100%;
+    height: 900px;
+    border: none;
+    background-color: #76ABAE;
+    overflow:auto;
+    margin:100px;
+}
+#spider-chart .chart {
+    width: 90%; /* Adjust to control the width and spacing on left and right */
+    margin: 0 auto; /* Centers the chart */
+    padding:  0px; /* Optional padding for top and bottom */
+    border: 5px solid black;
+}
+
+#spider-chart h1{
+    color: #76ABAE;
+    font-family: 'Anton SC';
+    font-size: 70px;
+    text-align: center;
+    border-bottom: 5px solid #76ABAE; /* Add this line for the bottom border */
+    padding-bottom: 10px; /* Optional: Add some padding below the text */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin:20px;
+}
+
+#spider-chart p {
+    color:white;
+    text-align: center;
+    padding: 10px 60px;
+}
+/*footer*/
+
+footer {
+    color: white;
+    padding: 0px 30px 30px 30px;
+    font-size: 18px;
+    font-family: Times New Roman, serif;
+    border-top: 2px solid white;
+    margin-top: 20px;
+    width: 100%;
+}
+
+footer  a{
+    color:#eeeeee;
+}

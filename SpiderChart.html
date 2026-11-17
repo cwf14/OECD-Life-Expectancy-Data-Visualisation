@@ -1,0 +1,40 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Domestic General Government Health Expenditure per Capita, PPP</title>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+        <link href="Stackedbar&Spider.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <h1 class="SpiderTitle">Domestic General Government Health Expenditure per Capita, PPP</h1>
+        
+        <!-- Group for dropdowns and reset button -->
+    <div class="spiderControl-group">
+        <label for="governmentyearDropdown">Select Year</label>
+        <select id="governmentyearDropdown" class="spider-dropdown"></select>
+
+        <label for="regionDropdown">Select Region</label>
+        <select id="regionDropdown" class="spider-dropdown">
+            <option value="allRegion">All Regions</option>
+            <option value="northAmerica">North America</option>
+            <option value="southAmerica">South America</option>
+            <option value="europe">Europe</option>
+            <option value="asiaPacific">Asia-Pacific</option>
+            <option value="middleEast">Middle East</option>
+        </select>
+
+        <button id="resetButton" class="spiderResetButton">Reset</button>
+    </div>
+
+        <div id="chart5container">
+            <div id="chart5"></div>
+            <div id="tooltip5"></div>
+        </div>
+
+        <script src="SpiderChart.js"></script>
+    </body>
+    </html>

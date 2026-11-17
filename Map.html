@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data Visualisation Exercise 1"/>
+    <meta name="keywords" content="HTML, CSS, D3, Data Import"/>
+    <meta name="author" content="Chai Wan Fei"/>
+    <title>Assignment 2</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://unpkg.com/d3-geo-projection@4"></script>
+    <link rel="stylesheet" href="Map.css">
+</head>
+
+<body>
+    <div class="container-map">
+       
+
+        <div id="chart1">
+            <div id="controls">
+                <div class="select-container">
+                    <label for="country-select">Select Countries:</label>
+                    <select id="country-select">
+                        <option value="all">All Countries</option>
+                        <option value="oecd">OECD Countries</option>
+                        <option value="non-oecd">Non-OECD Countries</option>
+                    </select>
+                    <label for="age-group-select">Select Age Group:</label>
+                    <select id="age-group-select"></select>
+                    <span class="tooltip" id="age-group-tooltip">Discover how many more years people in different age groups can expect to live.<br> e.g: Y80 is 80 years old</span>
+                    <button id="reset-filter-button">Reset Filter</button>
+                </div>
+                
+                <div class="slider-container">
+                    <label for="year-slider">Year: <span id="year-value"></span></label>
+                    <input type="range" id="year-slider" min="" max="" step="1">
+                </div>
+                
+                <div id="zoom-buttons"></div>
+            </div>
+            <div id="info-board">
+                <button id="close-info">×</button>
+                <h3>Year: <span id="board-year"></span></h3>
+                <div id="highest">
+                    <h4>Highest Life Expectancy:</h4>
+                    <p>Country: <span id="highest-country"></span></p>
+                    <p>Value: <span id="highest-value"></span></p>
+                </div>
+                <div id="lowest">
+                    <h4>Lowest Life Expectancy:</h4>
+                    <p>Country: <span id="lowest-country"></span></p>
+                    <p>Value: <span id="lowest-value"></span></p>
+                </div>
+            </div>
+            <button id="open-info" style="display: none;">Open Info</button>
+        </div>
+        
+        <script src="Map.js" defer></script>
+
+       
+    </div>
+</body>
+</html>

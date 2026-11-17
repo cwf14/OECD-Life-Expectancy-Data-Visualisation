@@ -1,0 +1,350 @@
+/*map*/
+    .container-map #chart1 {
+        background-color: #eee; /* Soft cream background */
+        margin:20px;
+        padding: 15px;
+    }
+    body {
+        font-family: sans-serif;
+        background-color: #eee; /* Soft cream background */
+        color: #333333; /* Dark grey for main text */
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        color: #5A2A27; /* Dark chestnut brown for main heading */
+        border-bottom: 3px solid #BF4E2A; /* Burnt sienna underline */
+        padding-bottom: 10px;
+    }
+
+    h3 {
+        color: #5A2A27; /* Dark chestnut brown for author name */
+        font-style: italic;
+        margin-top: 10px;
+    }
+
+    footer {
+        margin-top: 30px;
+        padding: 15px 0px 0px 0px;
+        background-color: #F5E1C1; /* Soft cream background */
+        border-top: 2px solid #BF4E2A; /* Burnt sienna border */
+        color: #5A2A27; /* Dark chestnut brown text */
+        text-align: center;
+        font-weight: bold;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .tooltip {
+            position: absolute;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            pointer-events: none;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+    #zoom-buttons, #control{
+        top: 10px;
+        left: 10px;
+      }
+      #zoom-in, #zoom-out, #reset-zoom{
+        background-color: #8eafd1; /* Soft cream background for buttons */
+        color: #000000; /* Dark chestnut brown text */
+        border-color: white;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin: 5px 0;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-align: center;
+    }
+    #zoom-buttons button:hover {
+        background-color: #e4ad9c; /* Burnt sienna on hover */
+    }
+
+    .oecd-country {
+        stroke-width: 0.5;
+    }
+
+    path:hover {
+        stroke: darkblue;
+        stroke-width: 2;
+    }
+
+    .non-oecd-country {
+        stroke-width: 0.5;
+    }
+
+    #chart1 {
+        margin: 0;  /* Remove default body margin */
+        overflow: hidden;  /* Prevent scrolling */
+        position: relative; /* Make chart div a positioning context */
+    }
+
+    section {
+        margin: 20px 0;
+        background: #fae5d3;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    /* Style for the dropdown container */
+    .select-container {
+        display: flex;
+        align-items: center;
+        margin: 20px;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    /* Style for the label */
+    label[for="age-group-select"], label[for="country-select"] {
+        margin-right: 10px;
+        margin-left: 10px;
+        font-weight: bold;
+        color: #333;
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    /* Style for the select element */
+    #age-group-select, #country-select {
+        flex-grow: 1;
+        padding: 8px 30px 8px 10px;
+        font-size: 16px;
+        border: 2px solid #be6751;
+        border-radius: 5px;
+        background-color: white;
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 16px;
+    }
+
+    /* Hover effect */
+    #age-group-select:hover, #country-select:hover {
+        border-color: #8a402e;
+        box-shadow: 0 0 5px rgba(33, 150, 243, 0.3);
+    }
+
+    /* Focus effect */
+    #age-group-select:focus, #country-select:focus {
+        outline: none;
+        border-color: #8a402e;
+        box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+    }
+
+    /* Style for the options */
+    #age-group-select option, #country-select option {
+        padding: 10px;
+        font-size: 16px;
+        background-color: white;
+        color: #333;
+    }
+
+    /* Hover effect for options */
+    #age-group-select option:hover, #country-select option:hover {
+        background-color: #8a402e;
+        color: white;
+    }
+
+    /* Selected option style */
+    #age-group-select option:checked, #country-select option:checked {
+        background-color: #8a402e;
+        color: white;
+    }
+
+    .slider-container {
+        margin: 10px 0;
+    }
+    
+    #year-slider {
+        width: 400px;
+        margin: 0 10px;
+
+    }
+    
+    #year-value {
+        display: inline-block;
+        min-width: 40px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+    }
+    
+    /* Style for the slider container */
+    .slider-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    /* Style for the slider input */
+    input[type="range"] {
+        /*-webkit-appearance: none;*/
+        width: 100%;
+        height: 15px;
+        border-radius: 5px;
+        background: #353434;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+
+    /* Hover effect for the slider */
+    input[type="range"]:hover {
+        opacity: 1;
+    }
+
+    /* Style for the slider thumb */
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #BF4E2A;
+        cursor: pointer;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #BF4E2A;
+        cursor: pointer;
+    }
+
+    /* Style for the year display */
+    #year-display {
+        text-align: center;
+        font-size: 24px;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    #reset-filter-button {
+        border-color: #8a402e;
+        border: 2px solid #be6751;
+        border-radius: 5px;
+        background-color: white;
+        padding: 10px; /* Padding around the text */
+        margin: 1em;
+        border-radius: 5px; /* Rounded corners */
+        font-weight: bold; /* Bold font */
+        transition: background-color 0.3s ease; /* Smooth background transition */
+        cursor: pointer;
+        white-space: nowrap; /* Prevent text from wrapping */
+
+    }
+    #reset-filter-button:hover {
+        background-color: #fff2f2;
+        border-width: 3px;
+    }
+
+    #info-board {
+        position: absolute;
+        right: 50px; /* Distance from right edge of chart */
+        top: 100px;  /* Distance from top of chart */
+        width: 250px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        z-index: 1000; /* Ensure it stays above the map */
+    }
+    
+    #info-board h3 {
+        margin-top: 0;
+        color: #333;
+        font-size: 1.2em;
+        border-bottom: 2px solid #666;
+        padding-bottom: 5px;
+    }
+    
+    #info-board h4 {
+        margin: 10px 0 5px 0;
+        color: #444;
+        font-size: 1.1em;
+    }
+    
+    #info-board p {
+        margin: 5px 0;
+        color: #666;
+    }
+    
+    #highest, #lowest {
+        margin: 15px 0;
+        padding: 10px;
+        border-radius: 3px;
+    }
+    
+    #highest, #lowest {
+        background-color: rgba(200, 230, 200, 0.3);
+    }
+    
+    #highest-country, #lowest-country, #highest-value, #lowest-value {
+        font-weight: bold;
+        color: #333;
+    }
+
+    #close-info, #open-info {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background: #f44336;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    
+    #open-info {
+        top: 100px;
+        right: 50px;
+        background: #4CAF50;
+    }
+    
+    #close-info:hover, #open-info:hover {
+        opacity: 0.8;
+    }
+
+.select-container label{
+    color: #000000;
+}
+    
+.slider-container label {
+    color: #000000;
+}
+
+#year-value{
+    color:#000000;
+}
+
+text{
+    color: #000000;
+}
+#age-group-tooltip {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position it absolutely */
+    background-color: #333; /* Dark background */
+    font-size: 14px;
+    color: #fff; /* White text */
+    padding: 10px; /* Some padding */
+    margin-bottom: 100px;
+    margin-left: 450px;
+    border-radius: 5px; /* Rounded corners */
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+#age-group-select:hover + .tooltip {
+    display: block; /* Show tooltip on hover */
+}

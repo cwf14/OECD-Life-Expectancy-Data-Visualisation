@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Life Expectancy Charts</title>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet'>
+    <link rel="stylesheet" href="bubble.css">
+</head>
+<body>
+        
+    <div id="bubbledesc">
+        <h1 id="bubble-title">Healthcare Coverage Levels </h1><h1 id="bubble-title2">Across OECD Countries</h1>
+        <section id="bubble-desc">
+        <!--<h2 id="bubble-subtitle"> Bubble Chart</h2>-->
+        <p>This bubble chart visualizes the population size (in thousands) that is covered by government healthcare across OECD countries. Each bubble represents an OECD country, with the bubble size corresponding to the number of people (in thousands) covered by government healthcare.</p>
+    </section>
+    </div>
+    <section class="bubble-chart-section">
+    <section class="time-slider">
+        <h1>Health Coverage</h1>
+    <label for="timeSlider">Select Time Period:</label>
+    <input type="range" id="timeSlider" min="0" max="0" step="1" value="0">
+    <span id="sliderValue"></span>
+</section>
+    <div id="Chart4"></div>
+    <div class="Chart4tooltip" id="tooltip"></div>
+    <script src="bubble.js"></script>
+</section>
+
+
+</div>
+</body>
+</html>

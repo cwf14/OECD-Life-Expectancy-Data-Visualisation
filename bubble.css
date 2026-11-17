@@ -1,0 +1,147 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    background-color: #EEEEEE;
+    background-image: linear-gradient(to right, black 1px, transparent 1px),
+                      linear-gradient(to bottom, black 1px, transparent 1px);
+    background-size: 100px 100px; /* Adjusts the grid spacing */
+}
+
+.bubble-chart-section {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically if needed */
+    background-color: #EEEEEE;
+    width: 80%;
+    height:auto;
+    border: 2px solid black;
+    box-shadow:15px 15px #222831;
+    
+}
+
+#timeSlider {
+    -webkit-appearance: none; /* Remove default styling */
+    width: 60%; /* Full width */
+    height: 20px; /* Height of the slider */
+    background: #222831; /* Background color */
+    border-radius: 10px; /* Rounded corners */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Slightly transparent */
+    transition: opacity .2s; /* Transition for opacity */
+    margin: 10px;
+}
+
+#timeSlider:hover {
+    opacity: 1; /* Fully visible on hover */
+}
+
+#timeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none; /* Remove default styling */
+    width: 30px; /* Width of the thumb */
+    height: 30px; /* Height of the thumb */
+    background: #76ABAE; /* Color of the thumb */
+    border-radius: 50%; /* Round thumb */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+#timeSlider::-moz-range-thumb {
+    width: 30px; /* Width of the thumb */
+    height: 30px; /* Height of the thumb */
+    background: #76ABAE; /* Color of the thumb */
+    border-radius: 50%; /* Round thumb */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+#sliderValue {
+    font-size: 20px; /* Font size for the value display */
+    margin: 10px 0px 20px 0px; /* Spacing above the value */
+    color: black;
+    text-align: center; /* Center text */
+}
+
+label {
+    font-size: 24px; /* Adjust the size as needed */
+    color: black;
+    text-align: center; /* Center text */
+}
+
+#tooltip {
+    position: absolute;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    pointer-events: none; /* Ensures tooltip doesn't interfere with mouse events */
+    opacity: 0; /* Initial hidden state */
+    transition: opacity 0.1s ease-in-out;
+}
+
+#bubble-title {
+    color: #222831;
+    margin-bottom: 0px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-family: 'Bungee';
+    margin-right:200px;
+    margin-top: 10px;;
+}
+
+#bubble-title2 {
+    color: #222831;
+    margin: 0px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-family: 'Bungee';
+    margin-left:300px;
+}
+
+#bubbledesc {
+    color: black;
+    margin-bottom: 30px;
+    padding: 10px;
+
+}
+
+#bubbledesc h1 {
+    font-size: 55px;
+}
+
+#bubbledesc p {
+    font-size: 18px;
+    padding: 10px;
+    margin:20px;
+}
+
+#bubble-subtitle {
+    font-size: 50px;
+    margin:50px;
+    margin-top: 50px;
+}
+
+#bubble-chart svg {
+    display: block;
+    margin: 0 auto; /* Center the SVG */
+}
+
+.time-slider {
+    margin-top: 20px;
+    text-align: center; /* Center time slider section */
+}
+#bubble-desc{
+    background-color: #222831;
+    color:#EEEEEE;
+    margin:20px;
+    padding:20px;
+    box-shadow:16px 16px #76ABAE;
+}
+
+.time-slider h1{
+    font-size: 40px;
+    margin:5px;
+}

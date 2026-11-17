@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Expectancy Charts</title>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <link href="ScatterPlot.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class = "scatter-container">
+            <div class = "scatter-button">
+                <select class="Chart2Button"id="selectButton"></select>
+                <select class="Chart2Button"id="ageButton"></select>
+            </div>
+             <div id="scatterPlot">
+                <!-- Scatter plot content will be rendered here by ScatterPlot.js -->
+            </div>
+        </div>
+        <div id="chart2desc">
+            <h1 id="chart2-title">Life Expectancy Trends by Gender Across OECD Countries</h1><br>
+            <p id="chart2-desc">
+                This connected scatter plot highlights the relationship between gender and life expectancy over time across OECD countries. Each point represents life expectancy for a given year, with points connected sequentially to show year-over-year changes. Separate lines represent life expectancy trends for males and females, allowing for a gender-based comparison within and across countries.<br>
+                
+            </p>
+        </div>
+    </div>
+    
+<script src="ScatterPlot.js"></script>
+
+
+</div>
+</body>
+</html>

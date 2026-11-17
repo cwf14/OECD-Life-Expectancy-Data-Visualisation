@@ -1,0 +1,224 @@
+/*////////////////////////////////////////////////////////////// GENERAL STYLES ////////////////////////////////////////////////////////////*/
+
+/* General body styles */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Tooltip styles */
+.spidertooltip, .mortalitytooltip {
+    position: absolute;
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 5px;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    /* Set uniform width for dropdowns and buttons */
+    .mortalityYearDropdown,
+    .mortalitySortOptions,
+    .mortalitySortRegions,
+    .mortalityToggleButton,
+    .mortalityResetButton,
+    .spider-dropdown {
+        width: 100%;
+        max-width: 400px; 
+    }
+
+    /* Stack control group elements vertically on small screens */
+    .mortalityControl-group {
+        flex-direction: column; /* Change direction to column */
+        align-items: stretch; /* Stretch items to fill width */
+    }
+
+    /* Chart container styles */
+    #chart3container,
+    #chart5container {
+        flex-direction: column; /* Stack charts vertically */
+        align-items: center; /* Center align charts */
+    }
+}
+
+/*////////////////////////////////////////////////////////////// MORTALITY STYLES ////////////////////////////////////////////////////////////*/
+
+/* Header styles */
+.mortalityTitle {
+    text-align: center;
+    color: #333;
+}
+
+/* Dropdown styles */
+.mortalityYearDropdown,
+.mortalitySortOptions,
+.mortalitySortRegions {
+    width: 200px; /* Set uniform width for dropdowns */
+    padding: 10px;
+    margin: 10px 5px; /* Adjust margin for spacing between dropdowns */
+    border: 2px solid #dcdcdc;
+    border-radius: 5px;
+    background-color: #333333;
+    color: peachpuff;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.mortalityYearDropdown:focus,
+.mortalitySortOptions:focus,
+.mortalitySortRegions:focus {
+    border-color: #0003af; /* Change border color on focus */
+}
+
+/* Button styles */
+.mortalityToggleButton,
+.mortalityResetButton {
+    width: 200px; /* Set uniform width for buttons */
+    padding: 10px;
+    margin: 10px 5px; /* Adjust margin for spacing */
+    border: none;
+    border-radius: 5px;
+    background-color: #333333; /* Tomato */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.mortalityToggleButton:hover, .mortalityResetButton:hover {
+    background-color: #6d6d6d; /* OrangeRed */
+}
+
+/* Control group styles */
+.mortalityControl-group {
+    display: flex;
+    flex-direction: row; /* Arrange elements in a row */
+    align-items: center; /* Align items vertically in the center */
+    margin: 10px 0;
+}
+
+/* Chart container styles */
+#chart3container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+/* Chart styles */
+#chart3 {
+    border: 2px solid #dcdcdc;
+    border-radius: 5px;
+    background-color: white;
+    margin-left: 10px;
+}
+
+/* Legend styles */
+#legend3 {
+    margin-left: 20px;
+    border: 2px solid #dcdcdc;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+    width:50%;
+}
+
+/*////////////////////////////////////////////////////////////// SPIDER STYLES ////////////////////////////////////////////////////////////*/
+
+/* Header styles */
+.SpiderTitle {
+    text-align: center;
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Control group styling */
+.spiderControl-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Dropdown styles */
+.spider-dropdown {
+    width: 250px;
+    padding: 10px;
+    margin: 10px 5px;
+    border: 2px solid #c5e1e5;
+    border-radius: 5px;
+    background-color: #d1f4f8;
+    color: #00564b;
+    font-size: 16px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.spider-dropdown:focus {
+    border-color: #00564b;
+    background-color: #b0e4eb;
+}
+
+/* Reset button styles */
+.spiderResetButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d1f4f8;
+    color: #00564b;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.spiderResetButton:hover {
+    background-color: #ffe60a;
+    transform: scale(1.05);
+}
+
+.spiderResetButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #a7dfe2;
+}
+
+/* Chart container styles */
+#chart5container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+/* Chart styles */
+#chart5 {
+    border: 2px solid #c5e1e5;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Legend styles */
+.legendItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.legendRect {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
